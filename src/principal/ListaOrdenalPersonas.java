@@ -28,6 +28,6 @@ public class ListaOrdenalPersonas extends TadLista<Persona> implements Comparabl
     // informacion basica del nodo
     @Override
     public String toString() {
-        return "Cedula: ";
+        return "Cedula: " + this.getCedula() + "\n";
     }
 }

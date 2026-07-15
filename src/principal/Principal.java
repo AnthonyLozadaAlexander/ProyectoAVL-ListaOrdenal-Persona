@@ -8,7 +8,7 @@ import tadLista.*;
 
 public class Principal {
     public static void main(String[] args) {
-        ArbolAVL<ListaOrdenalPersonas> arbolAVL = new ArbolAVL<>();
+        ArbolAVL<ListaOrdenalPersonas> arbolAVL = new ArbolAVL<>("Arbol AVL - Listas De Personas");
         AlgoritmosCRUD.insertar(arbolAVL, new Persona("0034", "Juan"));
         listar(arbolAVL);
         arbolAVL.info();
