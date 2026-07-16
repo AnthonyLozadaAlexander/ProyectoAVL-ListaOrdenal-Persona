@@ -1,12 +1,13 @@
-package algoritmos;
+package algoritmosCRUD;
 
+import algoritmos.AlgoritmosListas;
 import arbolBinario.ArbolAVL;
 import arbolBinario.NodoArbol;
 import principal.ListaOrdenalPersonas;
 import principal.Persona;
 import tadLista.TadLista;
 
-public class AlgoritmosCRUD {
+public class Algoritmos {
 
     private static void insertarOrdenal(TadLista<Persona> lista, Persona persona) {
         if (lista.esNulo() || lista.devolverClave().compareTo(persona) > 0) {

@@ -1,7 +1,7 @@
 package principal;
 
-import algoritmos.AlgoritmosCRUD;
 import algoritmos.AlgoritmosListas;
+import algoritmosCRUD.Algoritmos;
 import arbolBinario.ArbolAVL;
 import arbolBinario.NodoArbol;
 import tadLista.*;
@@ -9,7 +9,7 @@ import tadLista.*;
 public class Principal {
     public static void main(String[] args) {
         ArbolAVL<ListaOrdenalPersonas> arbolAVL = new ArbolAVL<>("Arbol AVL - Listas De Personas");
-        AlgoritmosCRUD.insertar(arbolAVL, new Persona("0034", "Juan"));
+        Algoritmos.insertar(arbolAVL, new Persona("0034", "Juan"));
         listar(arbolAVL);
         arbolAVL.info();
     }
