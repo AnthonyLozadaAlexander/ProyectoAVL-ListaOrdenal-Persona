@@ -9,6 +9,7 @@ import tadLista.*;
 public class Principal {
     public static void main(String[] args) {
         TadLista<Persona> lista = new TadLista<>("Lista Personas");
+
     }
 
 }
