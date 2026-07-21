@@ -2,7 +2,7 @@ package algoritmosCRUD;
 
 import arbolBinario.ArbolAVL;
 import arbolBinario.NodoArbol;
-import principal.Lista;
+import principal.ListaPersona;
 import principal.Persona;
 
 public class OperacionesCrud {
@@ -12,14 +12,14 @@ public class OperacionesCrud {
         return resul;
     }
 
-    @SuppressWarnings("unchecked")
     private static <T extends Comparable<T>> boolean insertaR(NodoArbol<T> nodo, Persona persona) {
         int comparacion;
         boolean resultado = false;
 
+        // si el nodo del arbol no es nulo.
         if (nodo != null) {
-            Lista<Persona> clave = (Lista<Persona>) nodo.getClave();
-            comparacion = persona.getCedula().compareTo(clave.getNombre());
+            ListaPersona clave = (ListaPersona) nodo.getClave();
+            comparacion = persona.getCedula().compareTo(clave.getCedula());
 
             // si comparacion es igual a 0, significa que la persona ya existe en el arbol
             if (comparacion == 0) {

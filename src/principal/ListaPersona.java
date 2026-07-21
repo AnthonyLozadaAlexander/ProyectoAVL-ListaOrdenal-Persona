@@ -2,7 +2,7 @@ package principal;
 
 import tadLista.TadLista;
 
-public class Lista<T> extends TadLista<T> implements Comparable<Lista<T>> {
+public class ListaPersona extends TadLista<Persona> implements Comparable<ListaPersona> {
 
     private String cedula; // referencia
 
@@ -10,13 +10,13 @@ public class Lista<T> extends TadLista<T> implements Comparable<Lista<T>> {
         return cedula;
     }
 
-    public Lista(String cedula) {
+    public ListaPersona(String cedula) {
         super(cedula);
         this.cedula = cedula;
     }
 
     @Override
-    public int compareTo(Lista<T> p) {
+    public int compareTo(ListaPersona p) {
         return this.getCedula().compareTo(p.getCedula());
     }
 
