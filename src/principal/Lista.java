@@ -1,9 +1,8 @@
-package algoritmosCRUD;
+package principal;
 
-import principal.Persona;
 import tadLista.TadLista;
 
-public class ListaPersonas extends TadLista<Persona> implements Comparable<ListaPersonas> {
+public class Lista<T> extends TadLista<T> implements Comparable<Lista<T>> {
 
     private String cedula; // referencia
 
@@ -11,12 +10,13 @@ public class ListaPersonas extends TadLista<Persona> implements Comparable<Lista
         return cedula;
     }
 
-    public ListaPersonas(String cedula) {
+    public Lista(String cedula) {
         super(cedula);
+        this.cedula = cedula;
     }
 
     @Override
-    public int compareTo(ListaPersonas p) {
+    public int compareTo(Lista<T> p) {
         return this.getCedula().compareTo(p.getCedula());
     }
 
