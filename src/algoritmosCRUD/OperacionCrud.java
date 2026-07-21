@@ -5,7 +5,7 @@ import arbolBinario.NodoArbol;
 import principal.ListaPersona;
 import principal.Persona;
 
-public class OperacionesCrud {
+public class OperacionCrud {
     public static <T extends Comparable<T>> boolean insertar(ArbolAVL<T> arbol, Persona persona) {
         boolean resul = false;
         resul = insertaR(arbol.getRaiz(), persona);
