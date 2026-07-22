@@ -9,10 +9,11 @@ import tadLista.*;
 
 public class Principal {
     public static void main(String[] args) {
-        ArbolAVL<ListaPersona> arbol = new ArbolAVL<>("Arbol De Listas Personas");
-        arbol.insertar(new ListaPersona("001"));
-        arbol.insertar(new ListaPersona("005"));
-        arbol.insertar(new ListaPersona("003"));
+        // Crear un árbol AVL de listas comparables
+        ArbolAVL<ListaComparable> arbol = new ArbolAVL<>("Arbol De Listas Personas");
+        arbol.insertar(new ListaComparable("A"));
+        arbol.insertar(new ListaComparable("B"));
+        arbol.insertar(new ListaComparable("C"));
 
         Persona ana = new Persona("001", "Ana");
         Persona kevo = new Persona("005", "Kevo");

@@ -3,22 +3,15 @@ package principal;
 import tadLista.Lista;
 import tadLista.TadLista;
 
-public class ListaPersona extends TadLista<Persona> implements Comparable<ListaPersona> {
+public class ListaComparable extends TadLista<Persona> implements Comparable<ListaComparable> {
 
-    private String cedula; // referencia
-
-    public String getCedula() {
-        return cedula;
-    }
-
-    public ListaPersona(String cedula) {
-        super(cedula);
-        this.cedula = cedula;
+    public ListaComparable(String nombre) {
+        super(nombre);
     }
 
     @Override
-    public int compareTo(ListaPersona p) {
-        return this.getCedula().compareTo(p.getCedula());
+    public int compareTo(ListaComparable p) {
+        return this.getNombre().compareTo(p.getNombre());
     }
 
     @Override
@@ -29,7 +22,7 @@ public class ListaPersona extends TadLista<Persona> implements Comparable<ListaP
     private String verLista() {
         Lista<Persona> aux = new TadLista<Persona>();
         aux.asignarReferencia(this.devolverReferencia());
-        return "Lista [" + cedula + "]: " + verListaR(aux);
+        return "Lista [" + this.getNombre() + "]: " + verListaR(aux);
     }
 
     private String verListaR(Lista<Persona> aux) {
