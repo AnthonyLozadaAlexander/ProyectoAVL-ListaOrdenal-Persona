@@ -3,38 +3,41 @@ package algoritmosCRUD;
 import arbolBinario.ArbolAVL;
 import arbolBinario.NodoArbol;
 import principal.ListaComparable;
-import principal.Persona;
 
 public class OperacionCrud {
-    public static <T extends Comparable<T>> boolean insertar(ArbolAVL<T> arbol, String nombreLista, Persona persona) {
+    public static <T extends Comparable<T>> boolean insertar(ArbolAVL<ListaComparable<T>> arbol, String nombreLista,
+            T elem) {
         boolean resul = false;
-        resul = insertaR(arbol.getRaiz(), nombreLista, persona);
+        if (arbol != null && nombreLista != null && elem != null) {
+            resul = insertaR(arbol.getRaiz(), nombreLista, elem);
+        }
         return resul;
     }
 
-    private static <T extends Comparable<T>> boolean insertaR(NodoArbol<T> nodo, String nombreLista, Persona persona) {
+    private static <T extends Comparable<T>> boolean insertaR(NodoArbol<ListaComparable<T>> nodo, String nombreLista,
+            T elem) {
         int comparacion;
         boolean resultado = false;
 
         // si el nodo del arbol no es nulo.
         if (nodo != null) {
-            ListaComparable clave = (ListaComparable) nodo.getClave();
-            comparacion = persona.getCedula().compareTo(clave.getNombre());
+            ListaComparable<T> listaActual = (ListaComparable<T>) nodo.getClave();
+            comparacion = nombreLista.compareTo(listaActual.getNombre());
 
             // si comparacion es igual a 0, significa que la persona ya existe en el arbol
             if (comparacion == 0) {
-                clave.crearNodo();
-                clave.asignarClave(persona);
+                listaActual.crearNodo();
+                listaActual.asignarClave(elem);
                 resultado = true;
 
                 // si la comparacion es menor a 0, significa que la persona es menor que la
                 // clave del nodo actual.
             } else if (comparacion < 0) {
-                resultado = insertaR(nodo.getIz(), nombreLista, persona);
+                resultado = insertaR(nodo.getIz(), nombreLista, elem);
                 // si la comparacion es mayor a 0, significa que la persona es menor que la
                 // clave del nodo actual.
             } else {
-                resultado = insertaR(nodo.getDe(), nombreLista, persona);
+                resultado = insertaR(nodo.getDe(), nombreLista, elem);
             }
         }
         return resultado;

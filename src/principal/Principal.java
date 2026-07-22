@@ -10,7 +10,7 @@ import tadLista.*;
 public class Principal {
     public static void main(String[] args) {
         // Crear un árbol AVL de listas comparables
-        ArbolAVL<ListaComparable> arbol = new ArbolAVL<>("Arbol De Listas Personas");
+        ArbolAVL<ListaComparable<Persona>> arbol = new ArbolAVL<>("Arbol De Listas Personas");
         arbol.insertar(new ListaComparable("A"));
         arbol.insertar(new ListaComparable("B"));
         arbol.insertar(new ListaComparable("C"));
