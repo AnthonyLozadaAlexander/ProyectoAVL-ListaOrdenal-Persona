@@ -18,8 +18,8 @@ public class Principal {
         Persona ana = new Persona("001", "Ana");
         Persona kevo = new Persona("005", "Kevo");
 
-        OperacionCrud.insertar(arbol, ana);
-        OperacionCrud.insertar(arbol, kevo);
+        OperacionCrud.insertar(arbol, "A", ana);
+        OperacionCrud.insertar(arbol, "B", kevo);
 
         arbol.info();
 

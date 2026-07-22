@@ -31,7 +31,6 @@ public class OperacionCrud {
                 // clave del nodo actual.
             } else if (comparacion < 0) {
                 resultado = insertaR(nodo.getIz(), nombreLista, persona);
-
                 // si la comparacion es mayor a 0, significa que la persona es menor que la
                 // clave del nodo actual.
             } else {
