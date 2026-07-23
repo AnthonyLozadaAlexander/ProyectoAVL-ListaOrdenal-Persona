@@ -43,4 +43,17 @@ public class OperacionCrud {
         return resultado;
     }
 
+    public static <T extends Comparable<T>> boolean buscar(ArbolAVL<ListaComparable<T>> arbol, T elem) {
+        boolean resul = false;
+        if (arbol != null && elem != null) {
+            resul = buscarR(arbol.getRaiz(), elem);
+        }
+
+        return resul;
+    }
+
+    private static <T extends Comparable<T>> boolean buscarR(NodoArbol<ListaComparable<T>> nodo, T elem) {
+        boolean resul = false;
+    }
+
 }
