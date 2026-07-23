@@ -3,6 +3,7 @@ package algoritmosCRUD;
 import arbolBinario.ArbolAVL;
 import arbolBinario.NodoArbol;
 import principal.ListaComparable;
+import tadLista.Lista;
 
 public class OperacionCrud {
     public static <T extends Comparable<T>> boolean insertar(ArbolAVL<ListaComparable<T>> arbol, String nombreLista,
@@ -46,14 +47,46 @@ public class OperacionCrud {
     public static <T extends Comparable<T>> boolean buscar(ArbolAVL<ListaComparable<T>> arbol, T elem) {
         boolean resul = false;
         if (arbol != null && elem != null) {
-            resul = buscarR(arbol.getRaiz(), elem);
+            resul = buscaR(arbol.getRaiz(), elem);
         }
 
         return resul;
     }
 
-    private static <T extends Comparable<T>> boolean buscarR(NodoArbol<ListaComparable<T>> nodo, T elem) {
+    private static <T extends Comparable<T>> boolean buscaR(NodoArbol<ListaComparable<T>> nodo, T elem) {
         boolean resul = false;
+
+        if (nodo != null) {
+            ListaComparable<T> aux = new ListaComparable<>("aux");
+            aux.asignarReferencia(nodo.getClave().devolverReferencia());
+
+            resul = buscarEnListaR(aux, elem);
+        }
+
+        if (!resul) {
+            resul = buscaR(nodo.getIz(), elem);
+        }
+
+        if (!resul) {
+            resul = buscaR(nodo.getDe(), elem);
+        }
+
+        return resul;
+    }
+
+    private static <T extends Comparable<T>> boolean buscarEnListaR(Lista<T> aux, T elem) {
+        boolean resul = false;
+
+        if (!aux.esNulo()) {
+            if (aux.devolverClave().compareTo(elem) == 0) {
+                resul = true;
+            } else {
+                aux.asignarReferencia(aux.devolverSiguiente());
+                resul = buscarEnListaR(aux, elem);
+            }
+        }
+
+        return resul;
     }
 
 }
