@@ -61,14 +61,14 @@ public class OperacionCrud {
             aux.asignarReferencia(nodo.getClave().devolverReferencia());
 
             resul = buscarEnListaR(aux, elem);
-        }
 
-        if (!resul) {
-            resul = buscaR(nodo.getIz(), elem);
-        }
+            if (!resul) {
+                resul = buscaR(nodo.getIz(), elem);
+            }
 
-        if (!resul) {
-            resul = buscaR(nodo.getDe(), elem);
+            if (!resul) {
+                resul = buscaR(nodo.getDe(), elem);
+            }
         }
 
         return resul;

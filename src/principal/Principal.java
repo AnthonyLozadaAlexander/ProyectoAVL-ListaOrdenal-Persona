@@ -9,7 +9,7 @@ import tadLista.*;
 
 public class Principal {
     public static void main(String[] args) {
-        // Crear un árbol AVL de listas comparables
+
         ArbolAVL<ListaComparable<Persona>> arbol = new ArbolAVL<>("Arbol De Listas Personas");
         arbol.insertar(new ListaComparable("A"));
         arbol.insertar(new ListaComparable("B"));
@@ -17,11 +17,13 @@ public class Principal {
 
         Persona ana = new Persona("001", "Ana");
         Persona kevo = new Persona("005", "Kevo");
-
+        Persona mario = new Persona("0004", "Mario");
         OperacionCrud.insertar(arbol, "A", ana);
         OperacionCrud.insertar(arbol, "B", kevo);
 
         arbol.info();
+
+        System.out.println("\nBuscar Mario: " + (OperacionCrud.buscar(arbol, mario) ? "Encontrado" : "No encontrado"));
 
     }
 
